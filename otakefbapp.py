@@ -23,7 +23,7 @@ st.markdown("""
 # ==============================
 st.title("🌊 大竹FB")
 st.markdown("---")
-st.write("FBをみんなで書き込んで、見返せるサイト")
+st.write("みんなでFBを書き込んで、見返そう！")
 
 
 # ==============================
@@ -70,7 +70,7 @@ data = sheet.get_all_records()
 if page == "📝 新しいFB":
     st.header("📝 新しいFB")
 
-TAGS = ["レスキュー", "シミュレーション","生活"]
+TAGS = ["レスキュー", "CPR","FA","シミュレーション","生活",]
 
 # フォームにするとEnterで誤送信しない
 with st.form("fb_form", clear_on_submit=True):
