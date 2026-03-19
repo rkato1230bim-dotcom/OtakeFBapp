@@ -2,7 +2,7 @@ import streamlit as st
 import gspread
 from google.oauth2.service_account import Credentials
 from datetime import date
-from pathlib import Path
+
 
 
 # ==============================
@@ -49,11 +49,10 @@ scope = [
 json_path = Path(__file__).parent / "otakefbapp-ec4996fda6a1.json"
 
 # 認証情報を作成
-creds = Credentials.from_service_account_file(
-    str(json_path),
+creds = Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"],
     scopes=scope
 )
-
 # gspreadクライアント作成（Google Sheets操作の入り口）
 client = gspread.Client(auth=creds)
 
