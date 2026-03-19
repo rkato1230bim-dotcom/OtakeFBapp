@@ -45,9 +45,6 @@ scope = [
     "https://www.googleapis.com/auth/drive"
 ]
 
-# JSONキーの場所（このpyファイルと同じフォルダに置く）
-json_path = Path(__file__).parent / "otakefbapp-ec4996fda6a1.json"
-
 # 認証情報を作成
 creds = Credentials.from_service_account_info(
     st.secrets["gcp_service_account"],
