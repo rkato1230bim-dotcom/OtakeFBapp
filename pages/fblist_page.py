@@ -1,7 +1,7 @@
 import streamlit as st
 import gspread
 from google.oauth2.service_account import Credentials
-from pathlib import Path
+
 
 # ==============================
 # ページ設定
@@ -30,10 +30,8 @@ scope = [
     "https://www.googleapis.com/auth/drive"
 ]
 
-json_path = Path(__file__).parent.parent / "otakefbapp-ec4996fda6a1.json"
-
-creds = Credentials.from_service_account_file(
-    str(json_path),
+creds = Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"],
     scopes=scope
 )
 
